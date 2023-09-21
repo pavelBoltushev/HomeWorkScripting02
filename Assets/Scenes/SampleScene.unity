@@ -1088,12 +1088,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798017646c7c76642996fefff2279c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _character: {fileID: 3848546730299674176, guid: 9a91deebb5b22e94f9a5cfb1646ed09a, type: 3}
+  _character: {fileID: 3352847867068260596, guid: 9a91deebb5b22e94f9a5cfb1646ed09a, type: 3}
   _spawnPoints:
-  - {fileID: 1565885458}
-  - {fileID: 179068358}
-  - {fileID: 432168366}
-  - {fileID: 610766597}
+  - {fileID: 1565885459}
+  - {fileID: 179068359}
+  - {fileID: 432168367}
+  - {fileID: 610766598}
   _spawnPeriodicity: 2
 --- !u!4 &1761661205
 Transform:

@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _character;
-    [SerializeField] private GameObject[] _spawnPoints;
+    [SerializeField] private Character _character;
+    [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private float _spawnPeriodicity;
 
-    private float _timeCounter = 0;
-
-    private void Update()
+    private void Start()
     {
-        _timeCounter += Time.deltaTime;
+        StartCoroutine(Spawn());
+    }
 
-        if (_timeCounter > _spawnPeriodicity)
+    private IEnumerator Spawn()
+    {
+        while (true)
         {
-            _timeCounter = 0;
+            yield return new WaitForSeconds(_spawnPeriodicity);
+
             int randomNumber = Random.Range(0, _spawnPoints.Length);
-            GameObject currentSpawnPoint = _spawnPoints[randomNumber];
-            Instantiate(_character, currentSpawnPoint.transform.position, Quaternion.identity);
-        }
+            Transform currentSpawnPoint = _spawnPoints[randomNumber];
+            Instantiate(_character, currentSpawnPoint.position, Quaternion.identity);            
+        }        
     }
 }
