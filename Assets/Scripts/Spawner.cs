@@ -15,9 +15,11 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
+        var wait = new WaitForSeconds(_spawnPeriodicity);
+
         while (true)
         {
-            yield return new WaitForSeconds(_spawnPeriodicity);
+            yield return wait;
 
             int randomNumber = Random.Range(0, _spawnPoints.Length);
             Transform currentSpawnPoint = _spawnPoints[randomNumber];
